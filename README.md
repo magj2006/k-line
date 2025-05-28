@@ -306,7 +306,7 @@ ws.onmessage = function(event) {
 5. **REST API** provides historical data access with proper error handling
 
 ### Key Features
-- **Thread-safe**: Uses `Arc<DashMap>` for high-performance concurrent access
+- **Thread-safe**: Uses `DashMap` for high-performance concurrent access
 - **Real-time Updates**: K-lines update in real-time as transactions occur
 - **Automatic Interval Closing**: K-lines are automatically closed when intervals complete
 - **Proper Time Alignment**: All intervals align to natural time boundaries
