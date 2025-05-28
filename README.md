@@ -206,7 +206,7 @@ The service will start on `http://localhost:8080`
 
 ### 🌐 Accessing the Web Interface
 
-1. **Open your browser** and navigate to `http://localhost:8080/`
+1. **Open your browser** and navigate to `http://localhost:8080/websocket_test.html`
 2. **Click "Connect"** to establish WebSocket connection
 3. **Monitor real-time data**:
    - Transaction stream with token filtering
