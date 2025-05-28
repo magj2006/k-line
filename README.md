@@ -12,14 +12,6 @@ A high-performance real-time data service for meme token trading platform built 
 - **Mock Data Generation**: Built-in configurable data generator for testing and demonstration
 - **Configuration Management**: TOML-based configuration with environment support
 
-### 🎯 Time Alignment
-K-line intervals are properly aligned to natural time boundaries:
-- **1s**: Aligned to exact seconds (remove nanoseconds)
-- **1m**: Aligned to exact minutes (00:00-00:59)
-- **5m**: Aligned to 5-minute boundaries (00, 05, 10, 15, etc.)
-- **15m**: Aligned to 15-minute boundaries (00, 15, 30, 45)
-- **1h**: Aligned to exact hour boundaries (00:00-59:59)
-
 ### 🌐 Web Interface
 Access the interactive web interface at `http://localhost:8080/`:
 - **Real-time Transaction Stream**: Filter by token (ALL, DOGE, SHIB, PEPE)
@@ -183,25 +175,6 @@ RUST_ENV=production cargo run
 # Use custom environment
 RUST_ENV=staging cargo run
 ```
-
-### Optional Environment Variable Overrides
-
-For containerized deployments, you can override specific settings:
-
-```bash
-# Server settings
-K_LINE_HOST=0.0.0.0
-K_LINE_PORT=8080
-
-# Data generation
-K_LINE_DATA_GENERATION_ENABLED=true
-K_LINE_DATA_INTERVAL_MS=100
-
-# Performance tuning
-K_LINE_MAX_WEBSOCKET_CONNECTIONS=5000
-```
-
-**Note**: TOML files are the primary configuration method. Environment variables are optional overrides mainly for Docker deployments.
 
 ### Running the Service
 
