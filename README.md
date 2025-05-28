@@ -305,19 +305,17 @@ ws.onmessage = function(event) {
 4. **WebSocket Manager** broadcasts updates to subscribed clients with session management
 5. **REST API** provides historical data access with proper error handling
 
-### Key Features
-- **Thread-safe**: Uses `DashMap` for high-performance concurrent access
-- **Real-time Updates**: K-lines update in real-time as transactions occur
-- **Automatic Interval Closing**: K-lines are automatically closed when intervals complete
-- **Proper Time Alignment**: All intervals align to natural time boundaries
-- **Scalable Architecture**: Modular design supports easy extension
-- **Configuration Management**: Environment-based configuration with TOML files
-- **Comprehensive Testing**: 27 test cases covering all functionality
+### Technical Implementation
+- **Storage**: Direct `DashMap` usage for high-performance concurrent access
+- **Memory Management**: In-memory storage with configurable retention policies
+- **Concurrency**: Lock-free data structures for optimal performance
+- **Time Handling**: Precise interval alignment using UTC timestamps
+- **Error Handling**: Comprehensive error propagation and logging
 
 ### Performance Characteristics
 Based on benchmark results:
 - **Single Transaction Processing**: ~11.8 µs
-- **Concurrent Transaction Processing**: ~167 µs
+- **Concurrent Transaction Processing**: ~167 µs  
 - **K-line Query**: ~4.2 µs
 - **High-frequency Updates**: ~1.17 ms
 - **WebSocket Broadcasting**: Sub-millisecond latency
