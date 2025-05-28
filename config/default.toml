@@ -1,0 +1,39 @@
+# K-Line Data Service Default Configuration
+
+[server]
+host = "0.0.0.0"
+port = 8080
+
+[tokens]
+# Supported token configuration
+[[tokens.supported_tokens]]
+symbol = "DOGE"
+base_price = 0.15
+volatility = 5.0
+
+[[tokens.supported_tokens]]
+symbol = "SHIB"
+base_price = 0.00005
+volatility = 8.0
+
+[[tokens.supported_tokens]]
+symbol = "PEPE"
+base_price = 0.000008
+volatility = 10.0
+
+[logging]
+level = "info"
+file_output = false
+
+[performance]
+worker_threads = 4
+websocket_heartbeat_interval = 5
+client_timeout = 10
+kline_retention_hours = 24
+max_websocket_connections = 1000
+
+[data_generation]
+interval_ms = 100
+volatility = 0.02
+volume_range = [100.0, 1000.0]
+enabled = true

@@ -1,0 +1,28 @@
+# K-Line Data Service Development Configuration
+
+[server]
+host = "127.0.0.1"
+port = 8080
+workers = 2
+
+[database]
+url = "postgres://postgres:my_password@localhost:5434/my_database"
+max_connections = 5
+connection_timeout = 30
+
+[logging]
+level = "debug"
+file_output = false
+
+[performance]
+worker_threads = 2
+websocket_heartbeat_interval = 5
+client_timeout = 10
+kline_retention_hours = 24
+max_websocket_connections = 100
+
+[data_generation]
+interval_ms = 100
+volatility = 0.02
+volume_range = [100.0, 1000.0]
+enabled = true
